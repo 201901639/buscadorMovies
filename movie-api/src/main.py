@@ -1,10 +1,13 @@
 import streamlit as st
 import pandas as pd
+import os
 from services.excel_service import ExcelService
 
-excel_service = ExcelService(
-    r"C:\Users\silvi\OneDrive - Universidad Pontificia Comillas\Documentos de interés\cosas mías\proyecto movie\movie-api\src\data\peliculas.xlsx"
-)
+# Usar ruta relativa para compatibilidad en despliegue
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+EXCEL_PATH = os.path.join(BASE_DIR, "data", "peliculas.xlsx")
+
+excel_service = ExcelService(EXCEL_PATH)
 
 # Obtener géneros únicos del Excel
 all_movies = excel_service.get_movies()

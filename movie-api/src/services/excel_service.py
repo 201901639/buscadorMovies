@@ -19,3 +19,7 @@ class ExcelService:
         }
         df = pd.concat([df, pd.DataFrame([new_movie])], ignore_index=True)
         df.to_excel(self.file_path, index=False)
+
+excel_service = ExcelService(
+    "src/data/peliculas.xlsx"
+)
