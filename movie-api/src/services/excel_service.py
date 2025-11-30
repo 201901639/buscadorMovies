@@ -10,12 +10,12 @@ class ExcelService:
         return movies
 
     def add_movie(self, name, year, genre, rating):
-        new_movie = {
-            'Name': name,
-            'Year': year,
-            'Genre': genre,
-            'Rating': rating
-        }
         df = pd.read_excel(self.file_path)
-        df = df.append(new_movie, ignore_index=True)
+        new_movie = {
+            "Nombre": name,
+            "Año": year,
+            "genre": genre,
+            "Nota": rating
+        }
+        df = pd.concat([df, pd.DataFrame([new_movie])], ignore_index=True)
         df.to_excel(self.file_path, index=False)

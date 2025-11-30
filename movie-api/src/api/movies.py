@@ -4,7 +4,9 @@ from models.movie import Movie
 from typing import List
 
 router = APIRouter()
-excel_service = ExcelService()
+excel_service = ExcelService(
+    r"c:\Users\silvi\OneDrive - Universidad Pontificia Comillas\Documentos de interés\cosas mías\proyecto movie\data\peliculas.xlsx"
+)
 
 @router.get("/movies", response_model=List[Movie])
 def search_movies(year: int = None, genre: str = None):
