@@ -21,5 +21,5 @@ class ExcelService:
         df.to_excel(self.file_path, index=False)
 
 excel_service = ExcelService(
-    "src/data/peliculas.xlsx"
+    "data/peliculas.xlsx"
 )
