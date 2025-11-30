@@ -1,5 +1,3 @@
-FastAPI
-uvicorn
 openpyxl
 pandas
 streamlit
