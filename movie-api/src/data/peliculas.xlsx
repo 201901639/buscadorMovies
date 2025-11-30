@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Create a DataFrame with the desired columns
+movies_data = {
+    "Name": [],
+    "Year": [],
+    "Genre": [],
+    "Rating": []
+}
+
+df = pd.DataFrame(movies_data)
+
+# Save the DataFrame to an Excel file
+excel_path = r"src/data/peliculas.xlsx"
+df.to_excel(excel_path, index=False)
